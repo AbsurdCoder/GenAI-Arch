@@ -14,7 +14,7 @@ class Config:
     """
 
     # Paths and directories
-    LOG_DIR = 'logs/sample_logs.txt' # os.getenv('LOG_DIR', 'logs/')
+    LOG_DIR = 'logs' # os.getenv('LOG_DIR', 'logs/')
     # EMBEDDING_CACHE_DIR = os.getenv('EMBEDDING_CACHE_DIR', 'cache/embeddings/')
     # REPORT_OUTPUT_PATH = os.getenv('REPORT_OUTPUT_PATH', 'reports/analysis_report.pdf')
 

@@ -40,11 +40,12 @@ def create_log_embeddings(log_entries: List[str]) -> List[List[float]]:
     Args: log_entries (List[str]): List of log entries to be embedded.
     Returns: List[List[float]]: List of embeddings, where each embedding is a list of float values.
     """
-    from utils.openai_helpers import create_embedding
+    from utils.model_helpers import ollama_helpers
     
+    oh = ollama_helpers()
     embeddings = []
     for entry in log_entries:
-        embedding = create_embedding(entry, Config.OPENAI_API_KEY)
+        embedding = oh.embedding(text=entry)
         embeddings.append(embedding)
     return embeddings
 
