@@ -46,7 +46,8 @@ def create_log_embeddings(log_entries: List[str]) -> List[List[float]]:
     embeddings = []
     for entry in log_entries:
         embedding = oh.embedding(text=entry)
-        embeddings.append(embedding)
+        if len(embedding) != 0:
+            embeddings.append(embedding)
     return embeddings
 
 def save_embeddings(embeddings, output_path):
